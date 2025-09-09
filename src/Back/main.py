@@ -23,10 +23,10 @@ async def root():
 @app.post("/print")
 async def print_result():
     printNumber=Printer.Printer().print_message()
-    conn=SqlConecter.SqlConecter.get_connection()
-    cursor=conn.cursor()
-    cursor.execute("INSERT INTO draws (number) VALUES (%s)", (printNumber,))
-    conn.commit()
-    cursor.close()
-    conn.close()
+    #conn=SqlConecter.SqlConecter.get_connection()
+    #cursor=conn.cursor()
+    #cursor.execute("INSERT INTO draws (number) VALUES (%s)", (printNumber,))
+    #conn.commit()
+    #cursor.close()
+    #conn.close()
     return {"message": "保存しました", "data": printNumber}
